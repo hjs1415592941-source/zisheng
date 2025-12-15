@@ -1,0 +1,93 @@
+.my-page {
+    background: #f8f8f8;
+    min-height: 100vh;
+    padding: 40rpx;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial;
+  }
+  
+  /* 用户信息区域 */
+  .user-info {
+    text-align: center;
+    margin-bottom: 40rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* 头像 */
+  .avatar {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+    margin-bottom: 20rpx;
+    box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, 0.08);
+    background: #f2f2f2;
+  }
+  
+  .placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #e0e0e0, #f9f9f9);
+  }
+  
+  .placeholder-text {
+    font-size: 28rpx;
+    color: #666;
+  }
+  
+  .username {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* 菜单列表 */
+  .menu-list {
+    background: #fff;
+    border-radius: 24rpx;
+    overflow: hidden;
+    box-shadow: 0 6rpx 18rpx rgba(0, 0, 0, 0.05);
+  }
+  
+  .menu-item {
+    position: relative; /* ⭐必须：让按钮可覆盖全行 */
+    display: flex;
+    align-items: center;
+    padding: 28rpx 32rpx;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+  }
+  
+  .menu-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* 点击按压效果 */
+  .menu-item:active {
+    background: #f2f2f2;
+  }
+  
+  .icon {
+    font-size: 40rpx;
+    margin-right: 20rpx;
+  }
+  
+  .text {
+    font-size: 30rpx;
+    color: #333;
+  }
+  
+  /* ⭐ 最终统一按钮覆盖方案（替换原先的 contact-btn & normal-btn） */
+  .menu-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;       /* 完全透明 */
+    z-index: 10;      /* 覆盖文字，可点击 */
+    border: none;
+    background: transparent;
+  }
+  

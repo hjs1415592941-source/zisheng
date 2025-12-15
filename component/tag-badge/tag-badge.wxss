@@ -1,0 +1,16 @@
+.badge-top {
+    position: absolute;
+    top: -5rpx;               /* 横条距离上方的距离（可调） */
+    left: -60%;                 
+    transform: translateX(-50%);
+
+    padding: 6rpx 26rpx;       /* 横条长度主要靠这里调 */
+    font-size: 22rpx;
+    color: #fff;
+
+    background: #d9c59a;       /* 默认金色，可根据 bgColor 动态变化 */
+    border-radius: 8rpx;       /* 横条 → 圆角小一点更像瑞幸 */
+    
+    white-space: nowrap;
+    z-index: 20;
+}

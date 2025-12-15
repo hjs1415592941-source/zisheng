@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "分类",
+    "usingComponents": {
+      "t-input": "/tdesign/miniprogram_dist/input/input",
+      "t-button": "/tdesign/miniprogram_dist/button/button",
+      "t-image": "/tdesign/miniprogram_dist/image/image",
+      "t-divider": "/tdesign/miniprogram_dist/divider/divider",
+      "tag-badge": "/component/tag-badge/tag-badge"
+    }
+  }
+  

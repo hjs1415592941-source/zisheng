@@ -1,0 +1,199 @@
+/* ============================= */
+/* 页 面 背 景                   */
+/* ============================= */
+.page {
+    background: #f5f5f7;
+    min-height: 100vh;
+  }
+  
+  
+  /* ============================= */
+  /* 顶 部 导 航 栏                */
+  /* ============================= */
+  .store-nav {
+    height: 120rpx;
+    padding: 0 24rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #ededed;
+  }
+  
+  .store-center {
+    flex: 1;
+    margin-left: 10rpx;
+  }
+  
+  .store-info {
+    display: flex;
+    align-items: center;
+    gap: 12rpx;
+  }
+  
+  .store-logo {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 20rpx;
+    margin-top: -15rpx;
+  }
+  
+  .store-name {
+    font-size: 32rpx;
+    font-weight: 600;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18rpx;
+  }
+  
+  .icon-img {
+    width: 44rpx;
+    height: 44rpx;
+    object-fit: contain;
+  }
+  
+  
+  
+  /* ============================= */
+  /* 新 品 上 新（一次一张）       */
+  /* ============================= */
+  
+  .section {
+    padding: 30rpx 40rpx 0rpx 40rpx;  /* 底部0，模块更紧凑 */
+  }
+  
+  .section-title {
+    font-size: 36rpx;
+    font-weight: 700;
+    margin-bottom: 0rpx;
+  }
+  
+  .title-sub {
+    display: block;
+    font-size: 26rpx;
+    color: #8e8e93;
+    margin-bottom: 18rpx;
+  }
+  
+  /* 一次显示一张 */
+  .new-swiper {
+    width: 100%;
+    height: 580rpx;
+    box-sizing: border-box;
+  }
+  
+  /* 卡片 */
+  .new-card {
+    width: 100%;
+    height: 500rpx;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 24rpx;
+    box-shadow: 0 12rpx 30rpx rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  }
+  
+  swiper-item-active .new-card {
+    transform: scale(1.02);
+    box-shadow: 0 18rpx 40rpx rgba(0, 0, 0, 0.12);
+  }
+  
+  /* 图片区 */
+  .new-img {
+    width: 100%;
+    height: 430rpx;
+    object-fit: cover;
+    display: block;
+    border-radius: 24rpx 24rpx 0 0;
+  }
+  
+  /* 文字区 */
+  .new-info {
+    padding: 14rpx 20rpx;
+    text-align: center;
+  }
+  
+  .new-title {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #222;
+    line-height: 40rpx;
+    letter-spacing: 1rpx;
+  }
+  
+  
+  
+  /* ============================= */
+  /* 精 品 推 荐（白色减少 + 居中）*/
+  /* ============================= */
+  
+  /* 精品推荐模块紧贴上方新品 */
+  .section + .section {
+    margin-top: -32rpx;      /* ★ 关键：大幅缩短距离 */
+    padding-top: 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20rpx;
+  }
+  
+  /* 商品卡片 */
+  .grid-card {
+    background: #fff;
+    border-radius: 20rpx;
+    overflow: hidden;
+    box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.06);
+    padding-bottom: 6rpx;     /* ↓ 减少白色区域 */
+  }
+  
+  /* 商品图片 */
+  .grid-cover {
+    width: 100%;
+    height: 340rpx;           /* ↑ 图片更大，白色更少 */
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* 文字区域 */
+  .grid-meta {
+    padding: 12rpx 10rpx;     /* ↓ 白底更小 */
+    text-align: center;       /* ★ 居中 */
+  }
+  
+  /* 商品名字体优化 */
+  .grid-title {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #111;
+    line-height: 38rpx;
+    letter-spacing: 0.5rpx;   /* 精致感 */
+  }
+  
+  .grid-spec {
+    display: block;
+    font-size: 24rpx;
+    color: #8e8e93;
+    margin-top: 10rpx;
+  }
+  
+  
+  
+  /* ============================= */
+  /* 底 部 提 示                   */
+  /* ============================= */
+  .notice {
+    margin: 30rpx;
+    padding: 20rpx;
+    color: #666;
+    font-size: 26rpx;
+    text-align: center;
+  }
+  

@@ -1,0 +1,173 @@
+/* ============================= */
+/* 加 载 状 态                 
+/* ============================= */
+.loading {
+    text-align: center;
+    margin-top: 200rpx;
+    font-size: 30rpx;
+    color: #777;
+  }
+  
+  /* ============================= */
+  /* 页 面 容 器                 
+  /* ============================= */
+  .detail-page {
+    background: #fff;
+    min-height: 100vh;
+    padding-bottom: 70px;
+  }
+  
+  /* ============================= */
+  /* 商 品 主 图                 
+  /* ============================= */
+  .main-img {
+    width: 100%;
+    height: 420rpx;          /* 更美观的比例 */
+  
+    background: #f6f6f6;
+    object-fit: contain;
+  }
+  
+  /* ============================= */
+  /* 价 格 模 块                 
+  /* ============================= */
+  .price-box {
+    background: linear-gradient(to right, #ff6f3e, #ff9c55);
+    padding: 18rpx 24rpx;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .price {
+    font-size: 32rpx;
+    font-weight: 700;
+  }
+  
+  /* ============================= */
+  /* 商 品 信 息                 
+  /* ============================= */
+  .goods-info {
+    padding: 24rpx;
+  }
+  
+  .tag {
+    display: inline-block;       /* 保证宽度只跟文字一致 */
+    background: #ffe7c5;
+    padding: 6rpx 18rpx;         /* 内边距缩短，背景更紧凑 */
+    border-radius: 12rpx;
+    font-size: 26rpx;
+    color: #c68500;
+    margin-bottom: 12rpx;
+  }
+  
+  
+  .name {
+    display: block;
+    margin-top: 12rpx;
+    font-weight: 600;
+    font-size: 32rpx;
+  }
+  
+  .desc {
+    font-size: 26rpx;
+    margin-top: 8rpx;
+    color: #666;
+  }
+  
+  .row {
+    padding: 20rpx 24rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .row .right {
+    color: #444;
+  }
+  
+  /* ============================= */
+  /* 猜 你 喜 欢（与首页一致）    
+  /* ============================= */
+  .section {
+    padding: 32rpx 40rpx 12rpx 40rpx;
+  }
+  
+  .section-title {
+    font-size: 34rpx;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24rpx;
+  }
+  
+  .grid-card {
+    background: #fff;
+    border-radius: 20rpx;
+    overflow: hidden;
+    box-shadow: 0 6rpx 14rpx rgba(0,0,0,0.06);
+  }
+  
+  .grid-cover {
+    width: 100%;
+    height: 320rpx;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .grid-meta {
+    padding: 20rpx;
+    text-align: center;
+  }
+  
+  .grid-title {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #111;
+    line-height: 38rpx;
+    letter-spacing: 0.5rpx;
+    text-align: center;
+  }
+  
+  .ellipsis-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  /* ============================= */
+  /* 底 部按钮区                
+  /* ============================= */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 60px;
+    display: flex;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+  
+  .btn {
+    flex: 1;
+    line-height: 60px;
+    text-align: center;
+    font-size: 28rpx;
+  }
+  
+  .left {
+    background: #f5f5f5;
+  }
+  
+  .mid {
+    background: #ffe7c5;
+    color: #c68500;
+  }
+  

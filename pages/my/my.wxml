@@ -1,0 +1,65 @@
+<view class="my-page">
+
+<!-- 用户信息区域 -->
+<view class="user-info">
+
+<!-- 固定头像 -->
+    <image
+      class="avatar"
+      src="cloud://cloud1-7gdjikngb178cdba.636c-cloud1-7gdjikngb178cdba-1307001048/iconfont/logo.png"
+      mode="aspectFill"
+    ></image>
+
+  <!-- 用户名 -->
+  <text class="username">
+    欢迎回来，祝你今天心情愉快！
+  </text>
+
+</view>
+
+<!-- 菜单列表 -->
+<view class="menu-list">
+
+  <view
+    wx:for="{{menuList}}"
+    wx:key="index"
+    class="menu-item"
+  >
+
+    <!-- 图标 + 文字 -->
+    <text class="icon">{{item.icon}}</text>
+    <text class="text">{{item.text}}</text>
+
+    <!-- 📞 联系客服（拨电话） -->
+    <button 
+      wx:if="{{ item.text === '联系客服' }}"
+      class="menu-btn"
+      bindtap="callPhone"
+    ></button>
+
+    <!-- 💬 对话客服 / 意见反馈（打开小程序客服窗口） -->
+    <button 
+      wx:elif="{{ item.text === '对话客服' || item.text === '意见反馈' }}"
+      class="menu-btn"
+      open-type="contact"
+    ></button>
+
+    <!-- 🔗 推荐给他人（分享） -->
+    <button
+      wx:elif="{{ item.text === '推荐给他人' }}"
+      class="menu-btn"
+      open-type="share"
+    ></button>
+
+    <!-- ℹ️ 关于我们 -->
+    <button
+      wx:elif="{{ item.text === '关于我们' }}"
+      class="menu-btn"
+      bindtap="openAbout"
+    ></button>
+
+  </view>
+
+</view>
+
+</view>

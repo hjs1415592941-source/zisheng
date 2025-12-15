@@ -1,0 +1,170 @@
+<view class="page">
+
+  <!-- 顶部搜索栏（瑞幸风格） -->
+  <view class="lux-search-bar">
+
+    
+
+    <!-- 搜索框 -->
+    <view class="lux-search-box">
+      <!-- 搜索图标 -->
+      <image 
+        class="lux-search-icon"
+        src="cloud://cloud1-7gdjikngb178cdba.636c-cloud1-7gdjikngb178cdba-1307001048/iconfont/search.png"
+        mode="widthFix"
+      />
+
+      <input
+        class="lux-search-input"
+        type="text"
+        placeholder="{{placeholderText}}"
+        placeholder-style="color:#bbb;font-size:14px"
+        value="{{keyword}}"
+        bindinput="onInput"
+        bindfocus="onFocus"
+        bindblur="onBlur"
+        bindconfirm="onSearch"
+      />
+    </view>
+
+    <!-- 右侧按钮 -->
+    <view class="lux-search-btn" bindtap="onSearch">搜索</view>
+
+  </view>
+
+
+  <!-- 🔽 联想提示浮层（悬浮，不影响下方布局） -->
+  <view 
+    wx:if="{{showSuggest && suggestList.length}}" 
+    class="suggest-list"
+  >
+    <view 
+      wx:for="{{suggestList}}" 
+      wx:key="*this"
+      class="suggest-item"
+      data-item="{{item}}"
+      bindtap="selectSuggest"
+    >
+      {{item}}
+    </view>
+  </view>
+
+
+  <!-- 主体布局 -->
+  <view class="layout">
+
+    <!-- 左侧分类（固定不滚动） -->
+    <view class="sidebar">
+
+      <view 
+        wx:for="{{categoryList}}"
+        wx:key="_id"
+        class="side-item {{activeIndex == index ? 'active' : ''}}"
+        data-index="{{index}}"
+        bindtap="changeCategory"
+      >
+
+        <!-- 左侧高亮竖条 -->
+        <view 
+          wx:if="{{activeIndex == index}}" 
+          class="active-bar">
+        </view>
+
+        <!-- 分类文字 + 图标容器 -->
+        <view class="name-box">
+
+          <!-- 礼盒系列 -->
+          <tag-badge
+            wx:if="{{item.cat_name === '礼盒系列'}}"
+            text="臻选好礼"
+            bgColor="#d9c59a"
+            class="tag-new"
+          />
+
+          <!-- 滋升玉米粉 -->
+          <tag-badge
+            wx:if="{{item.cat_name === '滋升玉米粉'}}"
+            text="每日营养"
+            bgColor="#d9c59a"
+            class="tag-new"
+          />
+
+          <!-- 新品上市图标 -->
+          <image 
+            wx:if="{{item.cat_name === '新品上市'}}"
+            class="tag-new"
+            src="cloud://cloud1-7gdjikngb178cdba.636c-cloud1-7gdjikngb178cdba-1307001048/iconfont/new.png"
+            mode="widthFix"
+          />
+
+          <!-- 果珍系列图标 -->
+          <image 
+            wx:if="{{item.cat_name === '果珍系列'}}"
+            class="tag-new"
+            src="cloud://cloud1-7gdjikngb178cdba.636c-cloud1-7gdjikngb178cdba-1307001048/iconfont/juice.png"
+            mode="widthFix"
+          />
+
+          <!-- 分类名称 -->
+          <text class="name">{{item.cat_name}}</text>
+        
+        </view>
+      </view>
+
+    </view>
+
+
+    <!-- 右侧商品列表 -->
+    <scroll-view 
+  scroll-y 
+  class="goods-list"
+  scroll-top="{{scrollTop}}"
+>
+
+      <view 
+        wx:for="{{goods}}"
+        wx:key="goods_id"
+        class="goods-card"
+        data-item="{{item}}"
+        bindtap="goDetail"
+      >
+
+        <!-- 商品图片 -->
+        <image 
+          src="{{item.image_src}}" 
+          mode="aspectFill" 
+          class="goods-img"
+        ></image>
+
+        <!-- 商品信息 -->
+        <view class="goods-info">
+
+          <!-- 商品标题（瑞幸风） -->
+          <view class="goods-title">{{item.goods_name}}</view>
+
+        <!-- 标签 -->
+            <view class="goods-tags">
+            <view 
+                wx:for="{{item.goods_tag}}" 
+                wx:key="*this"
+                class="tag-item"
+            >
+                {{item}}
+            </view>
+            </view>
+
+          <!-- 商品描述 -->
+            <view class="goods-desc">
+            {{item.goods_desc}}
+            </view>
+
+
+        </view>
+
+      </view>
+
+    </scroll-view>
+
+  </view>
+
+</view>

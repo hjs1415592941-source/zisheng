@@ -1,0 +1,109 @@
+<view class="search-page">
+
+<!-- 顶部搜索栏（瑞幸风格） -->
+<view class="lux-search-bar">
+
+<!-- 返回按钮 -->
+<text class="lux-back" bindtap="goBack">‹</text>
+
+<!-- 搜索框 -->
+<view class="lux-search-box">
+  <!-- 搜索图标 -->
+  <image 
+    class="lux-search-icon"
+    src="/static/category/search.png"
+    mode="widthFix"
+  />
+
+  <input
+    class="lux-search-input"
+    type="text"
+    placeholder="{{placeholderText}}"
+    placeholder-style="color:#bbb;font-size:14px"
+    value="{{keyword}}"
+    bindinput="onInput"
+    bindfocus="onFocus"
+    bindblur="onBlur"
+    bindconfirm="onSearch"
+  />
+</view>
+
+<!-- 右侧按钮 -->
+<view class="lux-search-btn" bindtap="onSearch">搜索</view>
+
+</view>
+
+
+<!-- 🔽 联想提示浮层（悬浮，不影响下方布局） -->
+<view 
+wx:if="{{showSuggest && suggestList.length}}" 
+class="suggest-list"
+>
+<view 
+  wx:for="{{suggestList}}" 
+  wx:key="*this"
+  class="suggest-item"
+  data-item="{{item}}"
+  bindtap="selectSuggest"
+>
+  {{item}}
+</view>
+</view>
+
+
+<!-- 搜索结果区 -->
+<!-- 搜索结果区 -->
+<scroll-view scroll-y class="scroll-area" scroll-top="{{scrollTop}}">
+
+
+<view class="goods-grid">
+
+  <view 
+    wx:for="{{list}}" 
+    wx:key="goods_id" 
+    class="goods-card-2col" 
+    bindtap="goDetail"
+    data-item="{{item}}"
+  >
+
+    <image 
+      src="{{item.image_src}}" 
+      mode="aspectFill" 
+      class="goods-img-2col"
+    ></image>
+
+    <view class="goods-info-2col">
+
+      <view class="goods-title-2col ell">{{item.goods_name}}</view>
+
+   <!-- 标签 -->
+   <view class="goods-tags">
+            <view 
+                wx:for="{{item.goods_tag}}" 
+                wx:key="*this"
+                class="tag-item"
+            >
+                {{item}}
+            </view>
+            </view>
+
+          <!-- 商品描述 -->
+            <view class="goods-desc">
+            {{item.goods_desc}}
+            </view>
+
+    </view>
+
+  </view>
+
+</view>
+
+<view wx:if="{{list.length === 0 && searched}}" class="empty">
+  <text>未找到相关商品</text>
+</view>
+
+</scroll-view>
+
+
+
+</view>

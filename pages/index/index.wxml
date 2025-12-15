@@ -1,0 +1,73 @@
+<view class="page">
+
+<!-- 顶部导航栏 -->
+<view class="store-nav">
+
+  <!-- 店铺信息（左侧） -->
+  <view class="store-center">
+    <view class="store-info">
+      <image class="store-logo" src="cloud://cloud1-7gdjikngb178cdba.636c-cloud1-7gdjikngb178cdba-1307001048/iconfont/logo.png"></image>
+      <text class="store-name">滋升食品</text>
+    </view>
+  </view>
+
+  <!-- 右侧图标区 -->
+  <view class="nav-right" bindtap="goSearch">
+  <image class="icon-img" src="cloud://cloud1-7gdjikngb178cdba.636c-cloud1-7gdjikngb178cdba-1307001048/iconfont/search.png"></image>
+</view>
+
+
+</view>
+
+
+<!-- 新品 Apple 风横滑 -->
+<view class="section">
+  <text class="section-title">产品上新</text>
+  <text class="title-sub">精心甄选，只为与你相遇。</text>
+
+  <swiper
+    class="new-swiper"
+    circular="true"
+    autoplay="false"
+    
+    easing-function="easeInOutCubic"
+  >
+    <swiper-item wx:for="{{hotList}}" wx:key="goods_id">
+      <view class="new-card" bindtap="goDetail" data-item="{{item}}">
+        <image class="new-img" src="{{item.image_src}}" mode="aspectFill"></image>
+
+        <view class="new-info">
+          <text class="new-title">{{ item.goods_name }}</text>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view> <!-- ★ 正确闭合 section -->
+
+
+<!-- 精品推荐 -->
+<view class="section">
+  <text class="section-title">精品推荐</text>
+
+  <view wx:if="{{loading}}" style="text-align:center;padding:40rpx;">
+    <text>加载中...</text>
+  </view>
+
+  <view wx:else class="grid">
+    <view class="grid-card" wx:for="{{recommendList}}" wx:key="_id" bindtap="goDetail" data-item="{{item}}">
+      <image class="grid-cover" src="{{item.image_src}}" mode="aspectFill"></image>
+      <view class="grid-meta">
+        <text class="grid-title ellipsis-2">{{ item.goods_name }}</text>
+        
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 底部提示 -->
+<view class="notice">
+  <text>ℹ️ 我司产品仅供展示，如需购买请联系经销门店</text>
+</view>
+
+</view>

@@ -1,0 +1,3 @@
+<view class="badge-top" style="background: {{bgColor}}">
+  {{text}}
+</view>

@@ -1,0 +1,67 @@
+<view class="detail-page">
+
+<!-- Loading -->
+<view wx:if="{{loading}}" class="loading">加载中...</view>
+
+<view wx:else>
+
+  <!-- 商品大图 -->
+  <image
+    class="main-img"
+    src="{{product.image_src || placeholder}}"
+    mode="aspectFit"
+    binderror="onImgError"
+  ></image>
+
+  <!-- 价格区 -->
+  <view class="price-box">
+    <view class="price">{{product.goods_price || "0.00"}}</view>
+  </view>
+
+  <!-- 商品简介 -->
+  <view class="goods-info">
+    <view class="tag">品牌好店</view>
+    <text class="name">{{ product.goods_name }}</text>
+    <text class="desc">规格：{{ product.goods_price || "暂无规格信息" }}</text>
+  </view>
+
+  <view class="row">
+    <text>售后</text>
+    <text class="right">官方售后 · 全程无忧</text>
+  </view>
+
+  <view class="row">
+    <text>保障</text>
+    <text class="right">7天无理由 · 破损包赔</text>
+  </view>
+
+  <!-- ⭐⭐⭐ 猜你喜欢（使用首页精品推荐样式） -->
+  <view class="section" wx:if="{{hotList.length}}">
+    <view class="section-title">猜你喜欢</view>
+
+    <view class="grid">
+      <view
+        class="grid-card"
+        wx:for="{{hotList}}"
+        wx:key="goods_id"
+        bindtap="goDetail"
+        data-item="{{item}}"
+      >
+        <image class="grid-cover" src="{{item.image_src}}" mode="aspectFill"></image>
+        <view class="grid-meta">
+          <text class="grid-title ellipsis-2">{{ item.goods_name }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="footer">
+  <button class="btn left" open-type="contact">联系客服</button>
+  <button class="btn mid" open-type="contact">联系商家</button>
+</view>
+
+
+</view>
+
+</view>

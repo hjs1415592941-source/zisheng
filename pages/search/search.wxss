@@ -1,0 +1,196 @@
+/* 页面整体 */
+.search-page {
+    height: 100vh;
+    overflow: hidden;    /* ⭐禁止外层滚动 → 防止双滚动 */
+    position: relative;
+    background: #f5f5f7;
+}
+
+  
+
+/* 顶部搜索栏：永远固定 */
+.lux-search-bar {
+    position: sticky;   /* ⭐让搜索栏吸顶 */
+    top: 0;
+    z-index: 999;       /* ⭐必须高于 scroll-view */
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  
+  /* 返回按钮 */
+  .lux-back {
+    font-size: 26px;
+    padding-right: 12px;
+    color: #333;
+  }
+  
+  /* 搜索框 */
+  .lux-search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #f7f8fa;
+    border-radius: 30px;
+    padding: 8px 14px;
+    margin-right: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* 搜索图标 */
+  .lux-search-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    opacity: 0.8;
+  }
+  
+  /* 输入框 */
+  .lux-search-input {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* 右侧搜索按钮 */
+  .lux-search-btn {
+    padding: 6px 14px;
+    background: #007aff;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 🔽 下拉联想浮层 */
+  .suggest-list {
+    position: absolute;
+    top: 56px;             /* 刚好贴在搜索框底下 */
+    left: 12px;
+    right: 12px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    z-index: 9999;         /* ⭐ 必须：压过 scroll-view */
+    overflow: hidden;
+    animation: fadeIn 0.15s ease-out;
+  }
+  
+  /* 下拉项 */
+  .suggest-item {
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f3f3f3;
+  }
+  
+  .suggest-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* 下拉动画 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+
+  /* 结果区唯一滚动主体 */
+.scroll-area {
+    height: calc(100vh - 60px);  /* 根据搜索栏真实高度改 */
+    overflow-y: scroll;
+    padding: 0 32rpx 32rpx 32rpx;/* ⭐ 左右留白变大了 */
+    box-sizing: border-box;
+  }
+  
+  
+  /* ======================== */
+  /*       双列商品布局       */
+  /* ======================== */
+  
+  .goods-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;   /* ⭐ 需要 space-between 才能完美两列 */
+  }
+  
+  
+  
+  /* 商品卡片（双列） */
+  .goods-card-2col {
+    width: calc((100% - 24rpx) / 2);   /* ⭐ 卡片宽度自动计算 */
+    background: #fff;
+    border-radius: 20rpx;
+    margin-bottom: 24rpx;
+    box-shadow: 0 8rpx 30rpx rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  
+  
+  /* 商品图片 */
+  .goods-img-2col {
+    width: 100%;
+    height: 220rpx;
+    border-radius: 20rpx 20rpx 0 0;
+    background: #f2f2f2;
+  }
+  
+  /* 商品文字区域 */
+  .goods-info-2col {
+    padding: 16rpx;
+  }
+  
+  /* 商品标题 */
+  .goods-title-2col {
+    font-size: 26rpx;
+    font-weight: 600;
+    color: #1c1c1e;
+    line-height: 36rpx;
+    margin-bottom: 12rpx;
+  }
+  
+  /* 两行省略 */
+  .ell {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  /* 标签区域 */
+  .goods-tags {
+    display: flex;
+    gap: 10rpx;
+    margin-bottom: 10rpx;
+  }
+  
+  .tag-item {
+    background: #f5efe2;
+    color: #b7985a;
+    font-size: 20rpx;
+    padding: 4rpx 10rpx;
+    border-radius: 10rpx;
+  }
+  
+  .goods-desc {
+    color: #7d7d7d;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    margin-bottom: 12rpx;
+  }
+  
+  
+  /* 空结果 */
+  .empty {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+  }
+  
